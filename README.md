@@ -107,7 +107,7 @@ Label glyphs (Noto Sans, SIL OFL) are vendored in `public/fonts`, so labels rend
 
 **GitHub Pages (set up):** `.github/workflows/deploy-pages.yml` builds the site and deploys it on every push to `main` (and to the current prototype branch). You can also run it by hand from the Actions tab. The site is served at **https://zer0krypt.github.io/MapMinnesota/**.
 
-One-time setup: under **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions**. The workflow tries to turn this on automatically, but repository permissions sometimes block that.
+One-time setup: under **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions**. The workflow can't turn Pages on by itself, so until you do this, deploys fail at the `configure-pages` step.
 
 The build output is a plain static site, so other hosts (Vercel, Netlify, Cloudflare Pages) work too. `base: './'` in `vite.config.ts` keeps asset paths relative, so the site runs from any subpath.
 
